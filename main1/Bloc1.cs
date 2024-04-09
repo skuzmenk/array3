@@ -27,6 +27,7 @@ namespace main1
             }
            public static void ArrayFilling(int N, int[] array)
             {
+               Console.WriteLine("Add the elements using Enter");
                 for (int i = 0; i < N; i++)
                 {
                     array[i] = int.Parse(Console.ReadLine());
@@ -79,6 +80,8 @@ namespace main1
             }
             public static void ShowResult(int K, int[] array)
             {
+                Console.WriteLine();
+            Console.WriteLine("The result:");
                 for (int i = 0; i < K; i++)
                 {
                     Console.WriteLine(array[i]);
