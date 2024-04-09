@@ -8,6 +8,7 @@ namespace main1
         {
             Console.WriteLine("Enter the number of lines");
             int N = int.Parse(Console.ReadLine());
+            Console.WriteLine();
 
             int[][] array = new int[N][];
             ArrayFilling(N, ref array);
