@@ -101,6 +101,7 @@ namespace main1
                     }
                     else if (j > swapped_lines_matrix.GetLength(1) / 2)
                     {
+                        //insertion sort
                         int temp, smallest;
 
                         for (int m = 0; m < swapped_lines_matrix.GetLength(1) - 1; m++)
