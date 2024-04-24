@@ -8,22 +8,30 @@ namespace main1
             public void Main()
             {
                 Console.WriteLine("Enter the number of array elements");
-                int N = int.Parse(Console.ReadLine());
+            int N = int.Parse(Console.ReadLine());
 
-                int[] input_array = new int[N];
-                ArrayFilling(N, input_array);
+            int[] input_array = new int[N];
+            ArrayFilling(N, input_array);
 
-                int maxIndex = 0; int minIndex = 0;
-                FindExtremeValues(input_array, N, ref maxIndex, ref minIndex);
-                SwapExtremeValues(ref minIndex, ref maxIndex);
+            int maxIndex = 0; int minIndex = 0;
+            FindExtremeValues(input_array, N, ref maxIndex, ref minIndex);
+            SwapExtremeValues(ref minIndex, ref maxIndex);
 
+            if (minIndex == 0 && maxIndex == N - 1)
+            {
+                Console.WriteLine("All elements have been deleted");
+                Console.ReadKey();
+            }
+            else
+            {
                 int K = N - (Math.Abs(maxIndex - minIndex) + 1);
                 int[] modified_array = new int[K];
 
                 NewArrayFilling(N, input_array, ref modified_array, minIndex, maxIndex);
 
-                ShowResult(K, modified_array);
+                ShowResult(K, minIndex, maxIndex, modified_array);
                 Console.ReadKey();
+            }
             }
            public static void ArrayFilling(int N, int[] array)
             {
@@ -34,6 +42,13 @@ namespace main1
                 }
             }
            public static void FindExtremeValues(int[] array, int N, ref int maxIndex, ref int minIndex)
+            {
+                if (array[0] == array[N - 1])
+            {
+                minIndex = 0;
+                maxIndex = N - 1;
+            }
+            else
             {
                 int min = int.MaxValue; int max = int.MinValue;
 
@@ -51,6 +66,7 @@ namespace main1
                         minIndex = i;
                     }
                 }
+            }
             }
             public static void SwapExtremeValues(ref int minIndex, ref int maxIndex)
             {
