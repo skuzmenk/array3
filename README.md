@@ -6,6 +6,7 @@ Shortly, this is a work of two students’ collaboration – Yana and Sasha. The
 Title:
 
 Dynamic Arrays (One-dimensional and Jagged) 
+
 Objective:
 
 To familiarize oneself with methods for processing dynamic arrays, particularly jagged arrays.
