@@ -95,7 +95,7 @@ namespace main1
                     count++;
                 }
             }
-            public static void ShowResult(int K, int[] array)
+            public static void ShowResult(int K, int minIndex, int maxIndex, int[] array)
             {
                 Console.WriteLine();
             Console.WriteLine("The result:");
