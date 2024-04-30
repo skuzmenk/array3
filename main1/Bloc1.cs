@@ -30,7 +30,7 @@ namespace main1
 
                 NewArrayFilling(N, input_array, ref modified_array, minIndex, maxIndex);
 
-                ShowResult(K, minIndex, maxIndex, modified_array);
+                ShowResult(K, modified_array);
                 Console.ReadKey();
             }
             }
@@ -95,7 +95,7 @@ namespace main1
                     count++;
                 }
             }
-            public static void ShowResult(int K, int minIndex, int maxIndex, int[] array)
+            public static void ShowResult(int K, int[] array)
             {
                 Console.WriteLine();
             Console.WriteLine("The result:");
