@@ -5,13 +5,13 @@ namespace main1
 {
     public class Task4
     {
-        public static void Input(int k, ref int[][] c, ref int count)
+        public static void Input(int a1, int b1, int k, ref int[][] c, ref int count)
         {
             Random rand = new Random();
             int a = 1;
             for (int i = 0; i < k; i++)
             {
-                int b = rand.Next(1, 11);
+                int b = rand.Next(a1, b1);
                 c[i] = new int[b];
                 for (int j = 0; j < b; j++)
                 {
@@ -65,13 +65,15 @@ namespace main1
         {
             Console.OutputEncoding = Encoding.UTF8;
             int count = 0;
-
+            Console.WriteLine("Введіть межі a i b через enter");
+            int a = Convert.ToInt32(Console.ReadLine());
+            int b = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the number of lines");
             int k = Convert.ToInt32(Console.ReadLine());
             if (k > 0)
             {
                 int[][] c = new int[k][];
-                Input(k, ref c, ref count);
+                Input(a, b, k, ref c, ref count);
                 int[] arr = new int[count];
                 Rewrite(ref count, k, c, ref arr);
                 Array.Sort(arr);
