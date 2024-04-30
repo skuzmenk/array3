@@ -55,8 +55,6 @@ namespace main1
             }
             public void Main()
             {
-
-                Console.OutputEncoding = Encoding.UTF8;
                 Console.WriteLine("Enter the length of the array");
                 int count = Convert.ToInt32(Console.ReadLine());
                 int[] numbers = new int[count];

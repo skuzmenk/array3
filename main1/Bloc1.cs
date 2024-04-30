@@ -4,6 +4,7 @@ namespace main1
 {
     public class Bloc1
     {
+        //Тест
         
             public void Main()
             {
