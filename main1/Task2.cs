@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace main1
 {
@@ -78,7 +79,13 @@ namespace main1
         }
         public void Main()
             {
-            Console.WriteLine("Enter your number");
+            // Створюємо новий процес для вимірювання пам'яті поточного процесу 
+            Process currentProcess = Process.GetCurrentProcess();
+
+            // Отримуємо обсяг пам'яті, використаної поточним процесом (в байтах) 
+            long memoryUsed = currentProcess.WorkingSet64;
+
+          Console.WriteLine("Enter your number");
                 int n = Convert.ToInt32(Console.ReadLine());
             int l = n;
             DifSum(ref n);
@@ -86,7 +93,14 @@ namespace main1
             int[][] arr = new int[n][];
             Calculation(l, ref arr);
                 Output(l, arr);
-                Console.ReadLine();
+            // Переведення байтів у кілобайти або мегабайти за необхідності 
+            double memoryUsedKB = memoryUsed / 1024.0;
+            double memoryUsedMB = memoryUsedKB / 1024.0;
+
+            // Виведення результату 
+            Console.WriteLine("Використання пам'яті: " + memoryUsed + " байт (" + memoryUsedKB + " KB or " + memoryUsedMB + " MB)");
+
+            Console.ReadLine();
             }
     }
     
