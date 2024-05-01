@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace main1
 {
@@ -6,6 +7,8 @@ namespace main1
     {
         public void Main()
         {
+            // Створюємо новий процес для вимірювання пам'яті поточного процесу
+            Process currentProcess = Process.GetCurrentProcess();
         Start:
             Console.WriteLine("Enter a natural number");
 
@@ -21,6 +24,16 @@ namespace main1
 
             ArrayFilling(N, ref array);
             ShowArray(array);
+
+            // Отримуємо обсяг пам'яті, використаної поточним процесом (в байтах)
+            long memoryUsed = currentProcess.WorkingSet64;
+
+            // Переведення байтів у кілобайти або мегабайти за необхідності
+            double memoryUsedKB = memoryUsed / 1024.0;
+            double memoryUsedMB = memoryUsedKB / 1024.0;
+
+            // Виведення результату
+            Console.WriteLine("Використання пам'яті: " + memoryUsed + " байт (" + memoryUsedKB + " KB or " + memoryUsedMB + " MB)");
 
             Console.ReadKey();
         }
